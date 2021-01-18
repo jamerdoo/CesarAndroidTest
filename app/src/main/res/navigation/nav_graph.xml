@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/personalDataFragment">
+
+    <fragment
+        android:id="@+id/personalDataFragment"
+        android:name="com.cesar.hiberustest.presentation.home_activity.fragments.personal_fragment.PersonalDataFragment"
+        android:label="PersonalDataFragment"
+        tools:layout="@layout/fragment_personal_data">
+        <action
+            android:id="@+id/action_personalDataFragment_to_dataFragment"
+            app:destination="@id/dataFragment"
+            app:popUpTo="@id/personalDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.cesar.hiberustest.presentation.home_activity.fragments.data_fragment.DataFragment"
+        android:label="fragment_personal_data"
+        tools:layout="@layout/fragment_data" >
+        <action
+            android:id="@+id/action_dataFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:popUpTo="@id/dataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.cesar.hiberustest.presentation.home_activity.fragments.details_fragment.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="itemData"
+            app:argType="string" />
+    </fragment>
+</navigation>
